@@ -35,7 +35,7 @@ const Form = ({ currentId, setCurrentId }) => {
     useEffect(() => {
         if (!post?.title) clear();
         if(post) setPostData(post);
-    }, [post])
+    }, [post]) // eslint-disable-line react-hooks/exhaustive-deps
 
     const handleSubmit = async (e) => {
         e.preventDefault();
