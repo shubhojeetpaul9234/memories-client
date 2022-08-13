@@ -67,7 +67,6 @@ const Form = ({ currentId, setCurrentId }) => {
         setPostData({ ...postData, tags: postData.tags.filter((tag) => tag !== chipToDelete) });
     };
 
-    console.log(postData)
     return (
         <Paper className={classes.paper} elevation={6}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
