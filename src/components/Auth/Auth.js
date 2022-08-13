@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { GoogleLogin } from 'react-google-login';
 import { useDispatch } from 'react-redux';
+import dotenv from 'dotenv';
 
 import useStyles from './styles';
 import Input from './Input';
@@ -11,6 +12,7 @@ import { AUTH } from '../../constants/actionTypes';
 import Icon from './icon';
 import { signin, signup } from '../../actions/auth';
 
+dotenv.config();
 const initialState = {
     firstName: '',
     lastName: '',
@@ -89,7 +91,7 @@ const SignUp = () => {
                         { isSignup ? 'Sign Up' : 'Sign In' }
                     </Button>
                     <GoogleLogin 
-                        clientId="690952731190-7t1c6peijhaqb2h3rvtql11dhk9dmdmu.apps.googleusercontent.com"
+                        clientId={process.env.REACT_APP_GOOGLE_ID}
                         render={(renderProps) => (
                             <Button 
                                 className={classes.googleButton} 
